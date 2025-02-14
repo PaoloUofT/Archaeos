@@ -47,7 +47,7 @@ p
 OsculumArea.Archaeo <- (d.All[["Osculum_Area"]] / 100000000)
 SurfaceArea.Archaeo <- (d.All[["Surface_Area"]] / 100000000)
 # Using ggplot2; assigned plot to variable
-p <- ggplot(data = d.All, aes(SurfaceArea.Archaeo,OsculumArea.Archaeo)) + 
+p1 <- ggplot(data = d.All, aes(SurfaceArea.Archaeo,OsculumArea.Archaeo)) + 
   geom_point(data = d.All, show.legend = T, aes(color = Class, shape = Class, fill = Class)) +
   #geom_point(mapping = aes(colour=species)) + #can color coordinate when you add species column
   xlab(expression(paste('log Surface Area (c', m^{2},')'))) +
@@ -56,10 +56,10 @@ p <- ggplot(data = d.All, aes(SurfaceArea.Archaeo,OsculumArea.Archaeo)) +
   scale_fill_manual(values = c("#f8766d", "#01bec4", "#01ba39")) +
   geom_smooth(method = 'lm', show.legend = F, se = T, aes(color = Class, fill = Class), alpha = .1)
 # Log10 scale both X and Y axes
-p <- p + scale_x_continuous(trans='log10', labels = scales::comma) +
+p1 <- p1 + scale_x_continuous(trans='log10', labels = scales::comma) +
   scale_y_continuous(trans='log10', labels = scales::comma)
 # Display plot
-p
+p1
 
 
 
